@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Tyuiu.KorotchenkoDM.Sprint5.Task0.V2.Lib;
 
 namespace Tyuiu.KorotchenkoDM.Sprint5.Task0.V2
@@ -41,6 +42,12 @@ namespace Tyuiu.KorotchenkoDM.Sprint5.Task0.V2
             string res = ds.SaveToFileTextData(x);
             Console.WriteLine("Файл: " + res);
             Console.WriteLine("Создан");
+
+            using (StreamReader reader = new StreamReader(res))
+            {
+                string y = reader.ReadLine();
+                Console.WriteLine("y = " + y);
+            }
 
             Console.ReadKey();
         }
